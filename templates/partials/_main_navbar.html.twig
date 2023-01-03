@@ -1,0 +1,47 @@
+{# Menu principal du site #}
+<nav class="navbar navbar-expand-lg navbar-dark bg-black main-navbar">
+    <div class="container-fluid">
+
+        {# Logo et titre du site #}
+        <a class="navbar-brand" href="{{ path('main_home') }}">
+            <img class="img-fluid main-navbar-logo" src="{{ asset('images/embleme-batman.png') }}" alt="">Le Blog de Batman
+        </a>
+
+        {# Bouton burger #}
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarContent" aria-controls="mainNavbarContent" aria-expanded="false" aria-label="Afficher la navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        {# Conteneur principal des boutons #}
+        <div class="collapse navbar-collapse" id="mainNavbarContent">
+
+            {# Paquet des boutons de gauche #}
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                {# Lien de la page d'accueil #}
+                <li class="nav-item">
+                    <a href="{{ path('main_home') }}" class="nav-link{{ route == 'main_home' ? ' active' }}">
+                        <i class="fa-solid fa-house mx-1"></i>Accueil
+                    </a>
+                </li>
+
+            </ul>
+
+            {# Paquet des boutons de droite #}
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+
+
+            </ul>
+
+            {# Formulaire de recherche dans les articles du site #}
+            <form class="d-flex">
+                <input name="s" class="form-control me-2" type="search" placeholder="Trouver un article" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+
+        </div>
+
+    </div>
+
+</nav>

@@ -1,7 +1,32 @@
+{# Utilisation du squelette de page base.html.twig #}
 {% extends "base.html.twig" %}
 
+{# Titre de la page #}
 {% block title %}Accueil{% endblock %}
 
+{# Contenu de la page #}
 {% block body %}
-    <h1>Accueil</h1>
+
+    {# Grille Bootstrap #}
+    <div class="container-fluid">
+
+        {# Titre h1 de la page #}
+        <div class="row">
+            <h1 class="col-12 text-center my-5">Le Blog de Batman</h1>
+        </div>
+
+        {# Contenu lorem #}
+        <div class="row">
+
+            <h2 class="text-center col-12 my-4">Lorem ipsum dolor sit amet, consectetur.</h2>
+
+            <p class="col-12 col-md-10 mx-auto text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci aliquid aperiam beatae blanditiis debitis delectus, et eum incidunt ipsam iste iusto laudantium minima perferendis quas quasi quia ratione recusandae reiciendis rerum tempore tenetur voluptatibus! Ad architecto asperiores at, consectetur deserunt eligendi error id incidunt, libero nihil porro soluta voluptatibus?</p>
+
+        </div>
+
+        {# Affichage de l'image fixe en bandeau #}
+        <div class="row my-5 batman-cover"></div>
+
+    </div>
+
 {% endblock %}

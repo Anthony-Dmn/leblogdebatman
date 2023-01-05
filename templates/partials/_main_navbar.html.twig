@@ -30,7 +30,52 @@
             {# Paquet des boutons de droite #}
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
+                {# Affichage des liens réservés aux utilisateurs connectés #}
+                {% if app.user %}
 
+                    {# Menu déroulant #}
+                    <li class="nav-item dropdown">
+
+                        {# Texte du bouton du menu déroulant #}
+                        <a class="nav-link dropdown-toggle text-light" href="#" id="profil-dropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {# Affichage du pseudonyme de l'utilisateur connecté #}
+                            <i class="fas fa-user mx-1"></i>XXXXXXXX
+                        </a>
+
+                        {# Liste des liens du menu déroulant #}
+                        <div class="dropdown-menu" aria-labelledby="profil-dropdown">
+
+                            {# Lien de la page mon profil #}
+                            <a class="dropdown-item" href="#"><i class="fas fa-users-cog me-1"></i>Mon Profil</a>
+
+                            {# Séparateur #}
+                            <div class="dropdown-divider"></div>
+
+                            {# Lien de la page de déconnexion #}
+                            <a class="dropdown-item" href="{{ path('app_logout') }}"><i class="fas fa-sign-out-alt me-1"></i>Déconnexion</a>
+
+                        </div>
+
+                    </li>
+
+                {# Affichage des liens réservés aux utilisateurs non connectés #}
+                {% else %}
+
+                    {# Lien de la page d'inscription #}
+                    <li class="nav-item">
+                        <a href="{{ path('app_register') }}" class="nav-link{{ route == 'app_register' ? ' active' }}">
+                            <i class="fa-solid fa-user-plus mx-1"></i>Inscription
+                        </a>
+                    </li>
+
+                    {# Lien de la page de connexion #}
+                    <li class="nav-item">
+                        <a href="{{ path('app_login') }}" class="nav-link{{ route == 'app_login' ? ' active' }}">
+                            <i class="fa-solid fa-right-to-bracket mx-1"></i>Connexion
+                        </a>
+                    </li>
+
+                {% endif %}
 
             </ul>
 

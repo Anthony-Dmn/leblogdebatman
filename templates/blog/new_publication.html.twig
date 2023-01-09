@@ -1,0 +1,32 @@
+{# Utilisation du squelette de page base.html.twig #}
+{% extends "base.html.twig" %}
+
+{# Titre de la page #}
+{% block title %}Nouvelle publication{% endblock %}
+
+{# Contenu de la page #}
+{% block body %}
+
+    {# Grille Bootstrap #}
+    <div class="container-fluid">
+
+        {# Titre h1 de la page #}
+        <div class="row">
+            <h1 class="col-12 text-center my-5">Nouvelle Publication</h1>
+        </div>
+
+        {# Affichage du formulaire #}
+        <div class="row">
+
+            <div class="col-12 col-md-8 mx-auto">
+
+                {# Affichage du formulaire de création d'article #}
+                {{ form( new_publication_form ) }}
+
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}

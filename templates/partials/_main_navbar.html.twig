@@ -25,6 +25,35 @@
                     </a>
                 </li>
 
+                {# Menu déroulant #}
+                <li class="nav-item dropdown">
+
+                    {# Texte du bouton du menu déroulant #}
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-newspaper me-1"></i>Blog
+                    </a>
+
+                    {# Liste des boutons du menu déroulant #}
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        {# Bouton de la page qui liste tous les articles #}
+                        <li><a class="dropdown-item" href="xxxxxxxxxxxxxx">Publications</a></li>
+
+                        {# Affichage des boutons réservés aux administrateurs #}
+                        {% if is_granted('ROLE_ADMIN') %}
+
+                            {# Séparateur #}
+                            <li><hr class="dropdown-divider"></li>
+
+                            {# Bouton de la page pour créer un nouvel article #}
+                            <li><a class="dropdown-item" href="{{ path('blog_new_publication') }}">Nouvelle Publication</a></li>
+
+                        {% endif %}
+
+                    </ul>
+
+                </li>
+
             </ul>
 
             {# Paquet des boutons de droite #}

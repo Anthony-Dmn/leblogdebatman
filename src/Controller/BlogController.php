@@ -63,4 +63,22 @@ class BlogController extends AbstractController
         ]);
     }
 
+    /**
+     * Contrôleur de la page qui liste tous les articles
+     */
+    #[Route('/publications/liste/', name: 'publication_list')]
+    public function publicationList(ManagerRegistry $doctrine): response
+    {
+
+        // Récupération du repository des articles
+        $articleRepo = $doctrine->getRepository( Article::class );
+
+        // On demande au repository de nous donner tous les articles qui sont en BDD
+        $articles = $articleRepo->findAll();
+
+        return $this->render('blog/publication_list.html.twig', [
+            'articles' => $articles,    // On envoie les articles à la vue Twig
+        ]);
+    }
+
 }

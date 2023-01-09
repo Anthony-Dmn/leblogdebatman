@@ -37,7 +37,7 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                         {# Bouton de la page qui liste tous les articles #}
-                        <li><a class="dropdown-item" href="xxxxxxxxxxxxxx">Publications</a></li>
+                        <li><a class="dropdown-item" href="{{ path('blog_publication_list') }}">Publications</a></li>
 
                         {# Affichage des boutons réservés aux administrateurs #}
                         {% if is_granted('ROLE_ADMIN') %}

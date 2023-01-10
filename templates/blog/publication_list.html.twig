@@ -33,18 +33,17 @@
                                 <div class="card-header">
 
                                     {# Titre de l'article, cliquable vers la page détaillée de l'article #}
-                                    <a class="text-decoration-none" href="#####">
+                                    <a class="text-decoration-none" href="{{ path('blog_publication_view', {'slug': article.slug}) }}">
                                         <i class="far fa-newspaper me-2"></i>{{ article.title }}
                                     </a>
                                 </div>
 
                                 <div class="card-body">
-
                                     <div class="mb-2">
 
                                         {# Affichage du contenu de l'article, tronqué à 100 mots, sans balises html, suivi de "..." et d'un lien "lire la suite" #}
                                         {{ article.content|excerpt(100) }}
-                                        <a class="text-decoration-none" href="#####">Lire la suite</a>
+                                        <a class="text-decoration-none" href="{{ path('blog_publication_view', {'slug': article.slug}) }}">Lire la suite</a>
                                     </div>
 
                                     {# Date et auteur de l'article #}

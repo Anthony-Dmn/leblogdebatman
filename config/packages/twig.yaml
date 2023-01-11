@@ -3,7 +3,10 @@ twig:
     form_themes: ['bootstrap_5_layout.html.twig']
     default_path: '%kernel.project_dir%/templates'
     globals:
+        # Nom du site
         site_name: 'Le Blog de Batman'
+        # Clé publique Google Recaptcha (récupérée depuis le fichier .env)
+        google_recaptcha_site_key: '%env(GOOGLE_RECAPTCHA_SITE_KEY)%'
 
 when@test:
     twig:

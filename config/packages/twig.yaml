@@ -2,6 +2,8 @@ twig:
     # Activation du thème Bootstrap 5 pour les formulaires générés par Symfony du site
     form_themes: ['bootstrap_5_layout.html.twig']
     default_path: '%kernel.project_dir%/templates'
+    globals:
+        site_name: 'Le Blog de Batman'
 
 when@test:
     twig:

@@ -15,6 +15,21 @@
             <h1 class="col-12 text-center my-5">Publications du Blog de Batman</h1>
         </div>
 
+        {# Affichage du nombre total d'articles #}
+        <div class="row">
+            <p class="col-12 text-center">Nombre total d'articles : {{ articles.getTotalItemCount }}</p>
+        </div>
+
+        {# S'il y a des articles, on affiche le menu de navigation #}
+        {% if articles is not empty  %}
+            <div class="row">
+                <div class="col-12 my-3 text-center">
+                    <div class="d-inline-block">
+                        {{ knp_pagination_render( articles ) }}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
 
         {# Affichage des articles #}
         <div class="row">
@@ -68,6 +83,17 @@
             </div>
 
         </div>
+
+        {# S'il y a des articles, on affiche le menu de navigation #}
+        {% if articles is not empty  %}
+            <div class="row">
+                <div class="col-12 my-3 text-center">
+                    <div class="d-inline-block">
+                        {{ knp_pagination_render( articles ) }}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
 
     </div>
 
